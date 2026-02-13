@@ -40,4 +40,5 @@ This script requires the following R packages:
 
 ## Author
 **Felipe Longaray Kadel**
-*Undergraduate Materials Engineering Student*
+*Materials Engineering Undergraduate - UFRGS*
+* felipe.longaray@ufrgs.br
