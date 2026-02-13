@@ -1,12 +1,10 @@
-# Chronoamperometry Data Analysis & Diffusion Fitting ⚡🧪
+# Chronoamperometry Data Analysis & Curve Fitting
 
 [![R Version](https://img.shields.io/badge/R-%3E%3D%204.0.0-blue.svg)](https://cran.r-project.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Data processing: PalmSens](https://img.shields.io/badge/Instrument-PalmSens_PSTrace-lightgrey.svg)]()
 
-This repository contains an automated R pipeline designed to process, clean, and analyze raw chronoamperometry data exported directly from PalmSens PSTrace software. 
-
-Rather than relying on manual spreadsheet manipulation, this script securely handles data provenance, extracts specific transient data points, performs statistical group analysis (ANOVA/t-tests), and fits a power-law decay model to evaluate diffusion kinetics.
+This repository contains an automated R pipeline designed to process, clean, and analyze raw chronoamperometry data exported directly from PalmSens PSTrace software. Rather than relying on manual spreadsheet manipulation, this script securely handles data, extracts specific transient data points, performs statistical group analysis (ANOVA/t-tests), and fits a power-law decay model to evaluate diffusion kinetics.
 
 ## Physics & Materials Context
 In standard chronoamperometry, the current response for a diffusion-controlled process is described by the **Cottrell equation**, where current decays proportionally to the inverse square root of time (I ∝ t^(-0.5)). However, in complex materials or nanostructured systems, transport often deviates from classical Fickian behavior, resulting in **anomalous diffusion**. This script fits the transient current decay to a generalized power-law model:
