@@ -1,0 +1,7 @@
+# R specific files
+.RData
+.Rhistory
+.Rproj.user/
+
+# Ignore raw and exported Excel data
+*.xlsx
