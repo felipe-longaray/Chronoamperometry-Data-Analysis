@@ -21,14 +21,17 @@ By applying a logarithmic transformation (`ln(I) = ln(a) + b*ln(t)`), the script
 * **Clustering Visualization:** Utilizes `ggforce` to plot and cluster the kinetic parameters (a vs. b), allowing for rapid visual differentiation of electrochemical behavior across different experimental conditions (e.g., Positive vs. Negative potentials).
 * **Consolidated Reporting:** Automatically exports a multi-sheet Excel workbook containing cleaned data, statistical summaries, and model parameters.
 
+## Alternative Code for Titration & Dilution Analysis (`Chronoamperometry-Analysis-Titers-Dilution.R`)
+Evaluates the electrochemical response across a gradient of concentrations (e.g., Negative Control, 1:2, 1:8 ... 1:1024).
+* **Automated Data Partitioning:** Extracts current at a defined transient state ($t = 5s$).
+* **Defensive Regression:** Implements `tryCatch` error handling to perform log-linear regression ($I = a \cdot t^b$) on the diffusion decay curve, preventing pipeline failure on noisy or mathematically invalid traces.
+* **Gradient Visualization:** Utilizes `colorRampPalette` to generate intuitive, publication-ready color gradients mapping to dilution factors.
+
 ## Dependencies
 This script requires the following R packages:
-* `readxl`
-* `openxlsx`
-* `dplyr`
-* `ggplot2`
-* `ggpubr`
-* `ggforce`
+* `readxl`, `openxlsx` (I/O handling)
+* `dplyr` (Data manipulation)
+* `ggplot2`, `ggpubr`, `ggforce` (Publication-grade visualization)
 
 ## Usage
 1. Place your raw PalmSens export `.xlsx` file in the `data/` directory.
