@@ -13,7 +13,6 @@ library(ggforce)
 # ------------------------------------------------------------------------------
 # 1. Data Import and Cleaning
 # ------------------------------------------------------------------------------
-# NOTE: For GitHub, it is best practice to use relative paths. 
 # Place your data file in a folder named 'data' within your repository.
 data_path <- "./data/PalmSens_Output.xlsx" 
 raw_data <- read_excel(data_path)
@@ -221,4 +220,5 @@ writeData(wb, sheet = "Curve_Analysis", regression_results, rowNames = FALSE)
 
 export_path <- "./data/Consolidated_Results.xlsx"
 saveWorkbook(wb, export_path, overwrite = TRUE)
+
 message("Analysis complete. Results saved to: ", export_path)
