@@ -1,6 +1,7 @@
 # Chronoamperometry Data Analysis & Curve Fitting
 
 [![R Version](https://img.shields.io/badge/R-%3E%3D%204.0.0-blue.svg)](https://cran.r-project.org/)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Data processing: PalmSens](https://img.shields.io/badge/Instrument-PalmSens_PSTrace-lightgrey.svg)]()
 
