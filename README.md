@@ -27,6 +27,23 @@ Evaluates the electrochemical response across a gradient of concentrations (e.g.
 * **Defensive Regression:** Implements `tryCatch` error handling to perform log-linear regression ($I = a \cdot t^b$) on the diffusion decay curve, preventing pipeline failure on noisy or mathematically invalid traces.
 * **Gradient Visualization:** Utilizes `colorRampPalette` to generate intuitive, publication-ready color gradients mapping to dilution factors.
 
+## Physics-Informed Machine Learning (`Chronomaperometry.Anomalous.Diffusion.and.Ergodicity.Breaking.py`)
+
+This module bridges the gap between theoretical physics and data science. It extracts anomalous diffusion parameters from the raw current transients and uses them as features for sensor classification.
+
+### Physics Features
+Instead of using raw current points (which are noisy and high-dimensional), we extract two physically meaningful parameters for each sensor:
+1.  **Anomalous Exponent ($\alpha$):** Derived from the power-law decay $I(t) \sim t^{-\alpha/2}$. This characterizes the "roughness" or sub-diffusive nature of the electrode surface.
+2.  **Total Charge ($Q$):** The integral of the current transient $Q = \int I(t) dt$, representing the total electrochemical activity.
+
+### Logistic Regression
+The script trains a Logistic Regression classifier to distinguish between `Positive` and `Negative` samples based on the $(\alpha, Q)$ feature space. 
+* **Output:** It generates a decision boundary equation (e.g., $Q = m \cdot \alpha + b$) that defines the physical threshold for a positive detection.
+* **Visualization:** Produces decision boundary plots showing how the machine learning model separates the experimental groups.
+
+### Waiting Time Distribution
+The script also reconstructs the **Waiting Time PDF** $\psi(t)$ for the charge carriers, based on the fractional diffusion relationship $\psi(t) \sim t^{-(1+\alpha)}$. This provides insight into the "aging" process of the diffusion process over time.
+
 ## Dependencies
 This script requires the following R packages:
 * `readxl`, `openxlsx` (I/O handling)
